@@ -4,6 +4,7 @@ Kho lưu trữ này bao gồm backend Flask quản lý domain và DNS cùng vớ
 
 - `backend_models.md` – các model cơ sở dữ liệu dùng trong ứng dụng Flask.
 - `backend_endpoints.md` – các route Flask hiện có.
+- `backend_guidelines.md` – quy tắc comment và mô tả cấu trúc backend.
 - `frontend_routes.md` – các đường dẫn router React cho phần frontend.
 
 Mỗi phần dưới đây mô tả ngắn gọn mục đích của backend và frontend.
