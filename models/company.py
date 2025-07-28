@@ -14,7 +14,9 @@ class Company(db.Model):
     footer_text = db.Column(db.Text, nullable=True)                  # Nội dung hiển thị footer
     description = db.Column(db.Text, nullable=True)                  # Mô tả về công ty (nếu cần)
     note = db.Column(db.Text, nullable=True)                         # Trường ghi chú mở rộng
-
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    user = db.relationship('User', back_populates='companies')
+     
     # Liên kết tới các website (1-n)
     websites = db.relationship('Website', back_populates='company')
 
