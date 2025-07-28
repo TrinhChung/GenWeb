@@ -7,12 +7,16 @@ const ProductItem = ({
   title,
   category,
   price,
+  popularity:_popularity,   // <--- thêm
+  stock:_stock         // <--- thêm
 }: {
   id: string;
   image: string;
   title: string;
   category: string;
   price: number;
+  popularity: number;   // <--- thêm
+  stock: number;        // <--- thêm
 }) => {
   return (
     <div className="w-[400px] flex flex-col gap-2 justify-center max-md:w-[300px]">
