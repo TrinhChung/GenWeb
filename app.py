@@ -10,6 +10,7 @@ from log import setup_logging
 from flask_login import LoginManager, current_user
 from seeder.seed_user import seed_admin_user
 from seeder.seed_cloudflare_account import seed_cloudflare_account
+from seeder.seed_template import seed_template
 
 from util.until import format_datetime
 from models.user import User
@@ -112,4 +113,5 @@ if __name__ == "__main__":
         db.create_all()
         seed_admin_user(app)
         seed_cloudflare_account(app)
+        seed_template(app)
     app.run(host="0.0.0.0", port=4000, debug=True)
