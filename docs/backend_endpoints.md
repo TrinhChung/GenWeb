@@ -52,3 +52,14 @@ Các route có tiền tố `/cloudflare`.
 | `/cloudflare/add` | GET, POST | Thêm tài khoản Cloudflare |
 | `/cloudflare/delete/<account_id>` | POST | Xóa tài khoản |
 | `/cloudflare/sync/<account_id>` | POST | Đồng bộ domain cho tài khoản |
+
+## Quản lý Company (`company_bp`)
+Tất cả các route có tiền tố `/company` và yêu cầu đăng nhập.
+
+| Đường dẫn | Phương thức | Mô tả |
+| --- | --- | --- |
+| `/company/` | GET | Liệt kê công ty của người dùng |
+| `/company/<company_id>` | GET | Xem chi tiết công ty |
+| `/company/add` | GET, POST | Thêm công ty mới |
+| `/company/edit/<company_id>` | GET, POST | Sửa thông tin công ty |
+| `/company/delete/<company_id>` | POST | Xóa công ty |
