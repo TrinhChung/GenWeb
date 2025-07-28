@@ -11,6 +11,7 @@ from flask_login import LoginManager, current_user
 from seeder.seed_user import seed_admin_user
 from seeder.seed_cloudflare_account import seed_cloudflare_account
 from seeder.seed_template import seed_template
+from seeder.seed_company import seed_companies
 
 from util.until import format_datetime
 from models.user import User
@@ -20,6 +21,7 @@ from models.cloudflare_acc import CloudflareAccount
 from models.domain_verification import DomainVerification
 from models.template import Template
 from models.company import Company
+from models.website import Website
 
 load_dotenv()
 migrate = Migrate()
@@ -114,4 +116,5 @@ if __name__ == "__main__":
         seed_admin_user(app)
         seed_cloudflare_account(app)
         seed_template(app)
+        seed_companies(app)
     app.run(host="0.0.0.0", port=4000, debug=True)
