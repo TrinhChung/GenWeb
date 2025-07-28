@@ -1,17 +1,17 @@
-# Project Documentation
+# Tài liệu dự án
 
-This repository contains a Flask backend for domain and DNS management and a React + TypeScript frontend template for an e‑commerce shop. Documentation is split into multiple files:
+Kho lưu trữ này bao gồm backend Flask quản lý domain và DNS cùng với mẫu frontend React + TypeScript cho một cửa hàng thương mại điện tử. Tài liệu được chia thành nhiều file:
 
-- `backend_models.md` – database models used by the Flask application.
-- `backend_endpoints.md` – available Flask routes.
-- `frontend_routes.md` – React router paths for the e‑commerce frontend.
+- `backend_models.md` – các model cơ sở dữ liệu dùng trong ứng dụng Flask.
+- `backend_endpoints.md` – các route Flask hiện có.
+- `frontend_routes.md` – các đường dẫn router React cho phần frontend.
 
-Each section below briefly describes the purpose of the backend and frontend.
+Mỗi phần dưới đây mô tả ngắn gọn mục đích của backend và frontend.
 
-## Backend Overview
+## Tổng quan Backend
 
-The backend is a Flask application. It uses SQLAlchemy for database access, WTForms for form validation and Flask-Login for authentication. Routes are organised with blueprints under the `routes/` folder and templates are rendered with Jinja2 from the `templates/` directory. Cloudflare APIs are used to manage DNS zones and records.
+Backend là ứng dụng Flask. Nó sử dụng SQLAlchemy để truy cập cơ sở dữ liệu, WTForms để kiểm tra biểu mẫu và Flask-Login cho xác thực. Các route được tổ chức bằng blueprint trong thư mục `routes/` và template được render bằng Jinja2 từ thư mục `templates/`. API Cloudflare được dùng để quản lý vùng DNS và bản ghi.
 
-## Frontend Overview
+## Tổng quan Frontend
 
-The `Fashion-eCommerce` folder provides a React + TypeScript project created with Vite. It includes routing via React Router, Redux Toolkit for state management and TailwindCSS for styling. The application serves as a template for a shopping website.
+Thư mục `Fashion-eCommerce` chứa dự án React + TypeScript khởi tạo bằng Vite. Nó bao gồm hệ thống định tuyến với React Router, Redux Toolkit để quản lý trạng thái và TailwindCSS cho phần giao diện. Ứng dụng đóng vai trò như mẫu cho một website mua sắm.

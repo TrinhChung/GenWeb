@@ -1,65 +1,65 @@
-# Backend Models
+# Các Model Backend
 
-Below is a summary of the SQLAlchemy models defined in the `models/` folder.
+Dưới đây là tóm tắt các model SQLAlchemy được định nghĩa trong thư mục `models/`.
 
 ## User
-- `id`: primary key
-- `username`: unique username
-- `email`: unique email address
-- `password`: hashed password
-- `is_active`: whether the account is approved
-- `is_admin`: admin flag
-- Relationships: `domains` (list of `Domain` owned by the user)
+- `id`: khóa chính
+- `username`: tên người dùng duy nhất
+- `email`: địa chỉ email duy nhất
+- `password`: mật khẩu đã băm
+- `is_active`: tài khoản đã được duyệt hay chưa
+- `is_admin`: cờ quản trị
+- Quan hệ: `domains` (danh sách `Domain` thuộc sở hữu của người dùng)
 
 ## Domain
-- `id`: primary key
-- `name`: domain name
-- `zone_id`: Cloudflare zone ID
-- `status`: domain status (e.g., `pending`, `verifying`)
-- `user_id`: owner user ID
-- `cloudflare_account_id`: reference to `CloudflareAccount`
-- Relationships: `dns_records` (DNS records), `cloudflare_account`, `user`
+- `id`: khóa chính
+- `name`: tên domain
+- `zone_id`: ID zone trên Cloudflare
+- `status`: trạng thái domain (vd. `pending`, `verifying`)
+- `user_id`: ID chủ sở hữu
+- `cloudflare_account_id`: tham chiếu `CloudflareAccount`
+- Quan hệ: `dns_records` (bản ghi DNS), `cloudflare_account`, `user`
 
 ## DNSRecord
-- `id`: primary key
-- `domain_id`: foreign key to `Domain`
-- `record_id`: Cloudflare record ID
-- `record_type`: DNS type (`A`, `CNAME`, `TXT`, ...)
-- `name`: record name
-- `content`: record value
-- `ttl`: time to live
-- `proxied`: whether the record is proxied through Cloudflare
+- `id`: khóa chính
+- `domain_id`: khóa ngoại tới `Domain`
+- `record_id`: ID bản ghi Cloudflare
+- `record_type`: kiểu DNS (`A`, `CNAME`, `TXT`, ...)
+- `name`: tên bản ghi
+- `content`: giá trị bản ghi
+- `ttl`: thời gian TTL
+- `proxied`: có dùng proxy Cloudflare hay không
 
 ## CloudflareAccount
-- `id`: primary key
-- `name`: account label
-- `email`: contact email
-- `api_token`: API token used for requests
-- `account_id`: Cloudflare account ID
-- `ns1` / `ns2`: default name servers for domains
-- Relationships: `domains` (managed domains)
+- `id`: khóa chính
+- `name`: nhãn tài khoản
+- `email`: email liên hệ
+- `api_token`: token API sử dụng cho các yêu cầu
+- `account_id`: ID tài khoản Cloudflare
+- `ns1` / `ns2`: name server mặc định cho domain
+- Quan hệ: `domains` (danh sách domain quản lý)
 
 ## DomainVerification
-- `id`: primary key
-- `txt_value`: TXT record content used for verification
-- `create_count`: how many times the TXT record was created
+- `id`: khóa chính
+- `txt_value`: nội dung bản ghi TXT dùng xác minh
+- `create_count`: số lần bản ghi TXT được tạo
 
 ## Template
-- `id`: primary key
-- `name`: template name
-- `description`: optional description
-- `sample_url`: URL to template preview
+- `id`: khóa chính
+- `name`: tên template
+- `description`: mô tả tùy chọn
+- `sample_url`: URL xem thử template
 
 ## Company
-- `id`: primary key
-- `domain_id`: associated domain
-- `dns_record_id`: primary DNS record
-- `name`: company name
-- `address`: company address
-- `hotline`: phone number
-- `email`: contact email
-- `license_no`: business license number
-- `google_map_embed`: map embed HTML or link
-- `logo_url`: logo path or URL
-- `footer_text`: text displayed in footer
-- `template_id`: reference to a `Template`
+- `id`: khóa chính
+- `domain_id`: domain liên kết
+- `dns_record_id`: bản ghi DNS chính
+- `name`: tên công ty
+- `address`: địa chỉ công ty
+- `hotline`: số điện thoại
+- `email`: email liên hệ
+- `license_no`: số giấy phép kinh doanh
+- `google_map_embed`: mã nhúng Google Map hoặc liên kết
+- `logo_url`: đường dẫn logo
+- `footer_text`: nội dung footer
+- `template_id`: tham chiếu tới `Template`
