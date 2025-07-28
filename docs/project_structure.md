@@ -33,7 +33,7 @@ GenWeb/
 - **requirements.txt** – Danh sách các package Python cần cài đặt.
 - **README.md** – Hướng dẫn tạo môi trường ảo và chạy ứng dụng.
 - **docs/** – Thư mục chứa tài liệu dự án (mô tả model, endpoint, quy tắc code...).
-- **models/** – Các model SQLAlchemy: `User`, `Domain`, `DNSRecord`, `CloudflareAccount`, `Company`, `Template`...
+- **models/** – Các model SQLAlchemy: `User`, `Domain`, `DNSRecord`, `CloudflareAccount`, `Company`, `Website`, `Template`...
 - **routes/** – Các blueprint Flask phân theo chức năng (`auth`, `domain`, `dns`, `cloudflare_account`, `admin`, `home`).
 - **templates/** – Giao diện Jinja2 dùng để render trang HTML.
 - **static/** – Tài nguyên tĩnh (CSS, JS) phục vụ template.

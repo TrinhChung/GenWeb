@@ -9,7 +9,7 @@ Dưới đây là tóm tắt các model SQLAlchemy được định nghĩa trong
 - `password`: mật khẩu đã băm
 - `is_active`: tài khoản đã được duyệt hay chưa
 - `is_admin`: cờ quản trị
-- Quan hệ: `domains` (danh sách `Domain` thuộc sở hữu của người dùng)
+- Quan hệ: `domains`, `companies`, `websites` (các đối tượng thuộc sở hữu của người dùng)
 
 ## Domain
 - `id`: khóa chính
@@ -52,8 +52,6 @@ Dưới đây là tóm tắt các model SQLAlchemy được định nghĩa trong
 
 ## Company
 - `id`: khóa chính
-- `domain_id`: domain liên kết
-- `dns_record_id`: bản ghi DNS chính
 - `name`: tên công ty
 - `address`: địa chỉ công ty
 - `hotline`: số điện thoại
@@ -62,4 +60,17 @@ Dưới đây là tóm tắt các model SQLAlchemy được định nghĩa trong
 - `google_map_embed`: mã nhúng Google Map hoặc liên kết
 - `logo_url`: đường dẫn logo
 - `footer_text`: nội dung footer
-- `template_id`: tham chiếu tới `Template`
+- `description`: mô tả về công ty (tùy chọn)
+- `note`: ghi chú mở rộng
+- `user_id`: chủ sở hữu (`User`)
+- Quan hệ: `websites` (danh sách `Website` thuộc công ty), `user`
+
+## Website
+- `id`: khóa chính
+- `company_id`: tham chiếu `Company`
+- `dns_record_id`: bản ghi DNS chính
+- `template_id`: tham chiếu `Template`
+- `static_page_link`: link trang tĩnh nếu có
+- `note`: ghi chú mở rộng
+- `user_id`: chủ sở hữu (`User`)
+- Quan hệ: `company`, `dns_record`, `template`, `user`
