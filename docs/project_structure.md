@@ -37,7 +37,7 @@ GenWeb/
 - **routes/** – Các blueprint Flask phân theo chức năng (`auth`, `domain`, `dns`, `cloudflare_account`, `admin`, `home`).
 - **templates/** – Giao diện Jinja2 dùng để render trang HTML.
 - **static/** – Tài nguyên tĩnh (CSS, JS) phục vụ template.
-- **seeder/** – Script khởi tạo dữ liệu mẫu như user admin và Cloudflare account.
+- **seeder/** – Script khởi tạo dữ liệu mẫu như user admin, Cloudflare account và template mặc định.
 - **util/** – Hàm tiện ích, đặc biệt `cloud_flare.py` thao tác API Cloudflare.
 - **Form/** – Định nghĩa các WTForms cho đăng ký, đăng nhập và form cấu hình domain.
 - **Fashion-eCommerce/** – Source code frontend mẫu viết bằng React + TypeScript sử dụng Vite.
