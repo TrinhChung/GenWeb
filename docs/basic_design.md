@@ -11,7 +11,7 @@
   - Cung cấp trang quản trị để người dùng thêm domain, chọn template và nhập dữ liệu công ty.
   - Sử dụng Cloudflare API để tạo zone, quản lý bản ghi DNS và đồng bộ domain.
   - Expose các REST API để frontend template truy vấn thông tin công ty dựa trên domain.
-- **Frontend template** (ví dụ thư mục `Fashion-eCommerce`):
+- **Frontend template** (ví dụ thư mục `template_fe` với các mẫu như `template_default`, `template_two`):
   - Được build sẵn bằng React + TypeScript.
   - Tất cả domain của doanh nghiệp sẽ trỏ về cùng một ứng dụng template này.
   - Khi người dùng truy cập, frontend lấy domain từ `window.location.hostname`, gọi REST API (`/api/company?domain=<domain>`) để lấy dữ liệu công ty và render vào vị trí footer, trang liên hệ, logo…

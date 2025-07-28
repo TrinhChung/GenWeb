@@ -21,7 +21,7 @@ GenWeb/
 ├── seeder/
 ├── util/
 ├── Form/
-└── Fashion-eCommerce/
+└── template_fe/
 ```
 
 ## Mô tả các thư mục và file
@@ -40,7 +40,7 @@ GenWeb/
 - **seeder/** – Script khởi tạo dữ liệu mẫu như user admin, Cloudflare account và template mặc định.
 - **util/** – Hàm tiện ích, đặc biệt `cloud_flare.py` thao tác API Cloudflare.
 - **Form/** – Định nghĩa các WTForms cho đăng ký, đăng nhập và form cấu hình domain.
-- **Fashion-eCommerce/** – Source code frontend mẫu viết bằng React + TypeScript sử dụng Vite.
+- **template_fe/** – Chứa các template React như `template_default`, `template_two`.
 
 Các tài liệu chi tiết khác nằm trong thư mục `docs/`, bao gồm:
 - `backend_models.md` – mô tả các model database.

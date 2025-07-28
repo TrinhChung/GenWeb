@@ -15,4 +15,4 @@ Backend là ứng dụng Flask. Nó sử dụng SQLAlchemy để truy cập cơ 
 
 ## Tổng quan Frontend
 
-Thư mục `Fashion-eCommerce` chứa dự án React + TypeScript khởi tạo bằng Vite. Nó bao gồm hệ thống định tuyến với React Router, Redux Toolkit để quản lý trạng thái và TailwindCSS cho phần giao diện. Ứng dụng đóng vai trò như mẫu cho một website mua sắm.
+Thư mục `template_fe` chứa các dự án React như `template_default`, `template_two`. Các template này khởi tạo bằng Vite hoặc Next.js và dùng React Router/Redux Toolkit cùng TailwindCSS cho giao diện.
