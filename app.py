@@ -12,6 +12,7 @@ from seeder.seed_user import seed_admin_user
 from seeder.seed_cloudflare_account import seed_cloudflare_account
 from seeder.seed_template import seed_template
 from seeder.seed_company import seed_companies
+from seeder.seed_product import seed_product
 
 from util.until import format_datetime
 from models.user import User
@@ -22,6 +23,11 @@ from models.domain_verification import DomainVerification
 from models.template import Template
 from models.company import Company
 from models.website import Website
+from models.order import Order
+from models.order_item import OrderItem
+from models.product import Product
+from models.user_fe import UserFE
+
 
 load_dotenv()
 migrate = Migrate()
@@ -119,4 +125,5 @@ if __name__ == "__main__":
         seed_cloudflare_account(app)
         seed_template(app)
         seed_companies(app)
+        seed_product(app)
     app.run(host="0.0.0.0", port=4000, debug=True)
