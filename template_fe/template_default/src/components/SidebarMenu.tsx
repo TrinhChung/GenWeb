@@ -24,11 +24,16 @@ const SidebarMenu = ({
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Hàm đóng sidebar
+  const handleMenuClick = () => setIsSidebarOpen(false);
+
+  // Đăng xuất và đóng sidebar
   const logout = () => {
     toast.error("Logged out successfully");
     localStorage.removeItem("user");
     store.dispatch(setLoginStatus(false));
     navigate("/login");
+    handleMenuClick();
   };
 
   useEffect(() => {
@@ -44,14 +49,13 @@ const SidebarMenu = ({
   const renderMenuItem = (
     label: string,
     to: string,
-    icon?: React.ReactNode,
-    onClick?: () => void
+    icon?: React.ReactNode
   ) => {
     const isActive = location.pathname === to;
     return (
       <Link
         to={to}
-        onClick={onClick}
+        onClick={handleMenuClick}
         className={`
           ${menuItemBase} 
           ${menuItemHover}
