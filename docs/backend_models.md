@@ -74,3 +74,52 @@ Dưới đây là tóm tắt các model SQLAlchemy được định nghĩa trong
 - `note`: ghi chú mở rộng
 - `user_id`: chủ sở hữu (`User`)
 - Quan hệ: `company`, `dns_record`, `template`, `user`
+
+## Product
+- `id`: khóa chính
+- `title`: tên sản phẩm
+- `image`: ảnh sản phẩm
+- `category`: danh mục
+- `price`: giá bán
+- `popularity`: mức độ phổ biến
+- `stock`: số lượng tồn kho
+- `description`: mô tả ngắn
+- `detail`: nội dung chi tiết
+- `delivery_detail`: thông tin giao hàng
+- Quan hệ: `order_items`
+
+## Order
+- `id`: khóa chính
+- `user_fe_id`: tham chiếu `UserFE`
+- `order_status`: trạng thái đơn hàng (mặc định `Processing`)
+- `order_date`: thời gian tạo
+- `subtotal`: tổng giá trị
+- `shipping_address`: địa chỉ nhận hàng
+- `phone`: số điện thoại
+- `payment_type`: hình thức thanh toán
+- `note`: ghi chú
+- Quan hệ: `user_fe`, `order_items`
+
+## OrderItem
+- `id`: khóa chính
+- `order_id`: tham chiếu `Order`
+- `product_id`: tham chiếu `Product`
+- `quantity`: số lượng
+- `price`: đơn giá
+- `size`: kích cỡ (tuỳ chọn)
+- `color`: màu sắc (tuỳ chọn)
+- `popularity`: độ phổ biến
+- `stock`: tồn kho
+- Quan hệ: `order`, `product`
+
+## UserFE
+- `id`: khóa chính
+- `name`: tên khách hàng
+- `lastname`: họ (tuỳ chọn)
+- `email`: địa chỉ email duy nhất
+- `password`: mật khẩu đã băm
+- `phone`: số điện thoại
+- `address`: địa chỉ
+- `created_at`: thời điểm tạo
+- `is_active`: trạng thái hoạt động
+- Quan hệ: `orders`
