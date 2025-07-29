@@ -8,6 +8,7 @@ import LinksSection from "./LinksSection";
 import Image from "next/image";
 import NewsLetterSection from "./NewsLetterSection";
 import LayoutSpacing from "./LayoutSpacing";
+import { Company } from "@/types/company.types";
 
 const socialsData: SocialNetworks[] = [
   {
@@ -55,7 +56,7 @@ const paymentBadgesData: PaymentBadge[] = [
   },
 ];
 
-const Footer = () => {
+const Footer = ({ company }: { company: Company}) => {
   return (
     <footer className="mt-10">
       <div className="relative">
