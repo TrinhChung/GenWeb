@@ -17,5 +17,6 @@ Phần frontend React định nghĩa các route trong `src/App.tsx` sử dụng 
 | `/user-profile` | `UserProfile` | trang hồ sơ người dùng |
 | `/order-history` | `OrderHistory` | loader `orderHistoryLoader` |
 | `/order-history/:id` | `SingleOrderHistory` | loader `singleOrderLoader` |
+| `/contact` | `Contact` | trang liên hệ |
 
 Tất cả các route đều được lồng trong `HomeLayout`, do đó các thành phần giao diện chung (header, footer, ...) được cung cấp bởi layout này.

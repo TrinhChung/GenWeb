@@ -7,6 +7,7 @@ import {
   Login,
   OrderConfirmation,
   OrderHistory,
+  Contact,
   Register,
   Search,
   Shop,
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
         path: "order-history/:id",
         element: <SingleOrderHistory />,
         loader: singleOrderLoader
+      },
+      {
+        path: "contact",
+        element: <Contact />,
       },
     ],
   },

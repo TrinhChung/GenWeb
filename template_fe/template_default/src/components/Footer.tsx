@@ -1,8 +1,30 @@
 import SocialMediaFooter from "./SocialMediaFooter";
 import { HiChevronDown } from "react-icons/hi2";
+import { useEffect, useState } from "react";
+import customFetch from "../axios/custom";
 
+interface CompanyInfo {
+  address: string;
+  hotline: string;
+  email: string;
+  footer_text: string;
+}
 
 const Footer = () => {
+  const [company, setCompany] = useState<CompanyInfo | null>(null);
+
+  useEffect(() => {
+    const loadCompany = async () => {
+      try {
+        const response = await customFetch.get("/company");
+        setCompany(response.data);
+      } catch (error) {
+        console.error("Failed to fetch company info", error);
+      }
+    };
+    loadCompany();
+  }, []);
+
   return (
     <>
       <SocialMediaFooter />
@@ -32,7 +54,14 @@ const Footer = () => {
         <div className="flex flex-col gap-8 my-20">
           <p className="flex justify-center items-center text-2xl gap-2 max-sm:text-xl">Worldwide / English <HiChevronDown /></p>
           <h2 className="text-6xl font-light text-center max-sm:text-5xl">FASHION</h2>
-          <p className="text-base text-center max-sm:text-sm">All rights reserved ©2024</p>
+          <p className="text-base text-center max-sm:text-sm">{company?.footer_text || 'All rights reserved ©2024'}</p>
+          {company && (
+            <div className="text-center text-base flex flex-col gap-1 max-sm:text-sm">
+              <p>{company.address}</p>
+              <p>{company.email}</p>
+              <p>{company.hotline}</p>
+            </div>
+          )}
           <ul className="flex justify-center items-center gap-7 text-base max-sm:text-sm max-[350px]:flex-col max-[350px]:gap-5">
             <li>Cookie Policy</li>
             <li>Privacy Policy</li>

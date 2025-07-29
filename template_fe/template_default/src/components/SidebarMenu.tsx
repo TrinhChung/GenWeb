@@ -76,6 +76,12 @@ const SidebarMenu = ({
             >
               Search
             </Link>
+            <Link
+              to="/contact"
+              className="py-2 border-y border-secondaryBrown w-full block flex justify-center"
+            >
+              Contact
+            </Link>
             {loginStatus ? (
               <>
                 <button
