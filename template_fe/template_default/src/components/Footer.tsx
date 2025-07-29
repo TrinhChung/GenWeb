@@ -27,7 +27,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="w-full bg-secondaryBrown text-white py-10 px-4">
+    <footer className="w-full bg-secondaryBrown text-white py-10 px-4 mt-3">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Cột 1: Thông tin công ty */}
         <div>
