@@ -6,6 +6,8 @@ Kho lưu trữ này bao gồm backend Flask quản lý domain và DNS cùng vớ
 - `backend_endpoints.md` – các route Flask hiện có.
 - `backend_guidelines.md` – quy tắc comment và mô tả cấu trúc backend.
 - `frontend_routes.md` – các đường dẫn router React cho phần frontend.
+- Các logo SVG mẫu được đặt trong thư mục `static/images/logo` để dùng cho
+  `template_default`.
 
 Mỗi phần dưới đây mô tả ngắn gọn mục đích của backend và frontend.
 

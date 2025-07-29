@@ -58,7 +58,8 @@ Dưới đây là tóm tắt các model SQLAlchemy được định nghĩa trong
 - `email`: email liên hệ
 - `license_no`: số giấy phép kinh doanh
 - `google_map_embed`: mã nhúng Google Map hoặc liên kết
-- `logo_url`: đường dẫn logo
+- `logo_url`: đường dẫn logo. Có thể chọn một file SVG trong thư mục
+  `static/images/logo` của dự án hoặc dùng URL bên ngoài.
 - `footer_text`: nội dung footer
 - `description`: mô tả về công ty (tùy chọn)
 - `note`: ghi chú mở rộng

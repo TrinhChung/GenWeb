@@ -36,7 +36,8 @@ GenWeb/
 - **models/** – Các model SQLAlchemy: `User`, `Domain`, `DNSRecord`, `CloudflareAccount`, `Company`, `Website`, `Template`, `Product`, `Order`, `OrderItem`, `UserFE`...
 - **routes/** – Các blueprint Flask phân theo chức năng (`auth`, `domain`, `dns`, `cloudflare_account`, `admin`, `home`).
 - **templates/** – Giao diện Jinja2 dùng để render trang HTML.
-- **static/** – Tài nguyên tĩnh (CSS, JS) phục vụ template.
+- **static/** – Tài nguyên tĩnh (CSS, JS, hình ảnh) phục vụ template. Thư mục
+  `static/images/logo` chứa các logo SVG mẫu cho `template_default`.
 - **seeder/** – Script khởi tạo dữ liệu mẫu như user admin, Cloudflare account, template, company và danh sách sản phẩm.
 - **util/** – Hàm tiện ích, đặc biệt `cloud_flare.py` thao tác API Cloudflare.
 - **Form/** – Định nghĩa các WTForms cho đăng ký, đăng nhập và form cấu hình domain.
