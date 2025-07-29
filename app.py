@@ -30,6 +30,7 @@ from models.order_item import OrderItem
 from models.product import Product
 from models.user_fe import UserFE
 
+from flask_cors import CORS
 
 load_dotenv()
 migrate = Migrate()
@@ -39,6 +40,8 @@ login_manager.login_view = "auth.login"  # Tên endpoint của route login
 
 def create_app():
     app = Flask(__name__, static_url_path="/static")
+    CORS(app, resources={r"/api/*": {"origins": "*"}})
+
 
     @app.context_processor
     def inject_common_env():
