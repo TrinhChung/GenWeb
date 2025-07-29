@@ -21,6 +21,7 @@ const Contact = () => {
   const [company, setCompany] = useState<Company | null>(null);
 
   useEffect(() => {
+    document.title = "Contact";
     const fetchCompany = async () => {
       try {
         const response = await customFetch.get("/company");

@@ -3,9 +3,14 @@ import { Button } from "../components";
 import { checkRegisterFormData } from "../utils/checkRegisterFormData";
 import customFetch from "../axios/custom";
 import toast from "react-hot-toast";
+import { useEffect } from "react";
 
 const Register = () => {
   const navigate = useNavigate();
+
+    useEffect(() => {
+      document.title = "Register"; // Set a static title for the search page
+    }, []);
 
   const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

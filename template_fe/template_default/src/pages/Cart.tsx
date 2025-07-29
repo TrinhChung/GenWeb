@@ -10,8 +10,14 @@ import {
   updateProductQuantity,
 } from "../features/cart/cartSlice";
 import toast from "react-hot-toast";
+import { useEffect } from "react";
 
 const Cart = () => {
+
+    useEffect(() => {
+          document.title = "Cart"; // Set a static title for the search page
+    }, []);
+
   const { productsInCart, subtotal } = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
 

@@ -22,6 +22,9 @@ const OrderHistory = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
+
+    document.title = "Order History"; // Set a static title for the order history page
+
     if (!user?.id) {
       toast.error("Please login to view this page");
       navigate("/login");

@@ -44,6 +44,9 @@ const Login = () => {
 
   useEffect(() => {
     const user = localStorage.getItem("user");
+
+    document.title = "Login"; // Set a static title for the login page
+
     if (user) {
       toast.success("You are already logged in");
       navigate("/user-profile");

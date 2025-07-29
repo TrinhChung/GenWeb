@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Button,
   ProductGrid,
@@ -12,6 +12,10 @@ const Search = () => {
   const [currentPage, setCurrentPage] = useState<number>(
     parseInt(searchParams.get("page") || "1")
   );
+
+  useEffect(() => {
+    document.title = "Search Products"; // Set a static title for the search page
+  }, []);
 
   return (
     <div className="max-w-screen-2xl mx-auto">
