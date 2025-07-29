@@ -63,3 +63,15 @@ Tất cả các route có tiền tố `/company` và yêu cầu đăng nhập.
 | `/company/add` | GET, POST | Thêm công ty mới |
 | `/company/edit/<company_id>` | GET, POST | Sửa thông tin công ty |
 | `/company/delete/<company_id>` | POST | Xóa công ty |
+
+## API Frontend (`api_fe_bp`)
+Các route có tiền tố `/api` và không yêu cầu đăng nhập.
+
+| Đường dẫn | Phương thức | Mô tả |
+| --- | --- | --- |
+| `/api/products` | GET | Lấy danh sách sản phẩm |
+| `/api/products/<id>` | GET | Chi tiết sản phẩm |
+| `/api/users` | GET, POST | Danh sách hoặc tạo người dùng FE |
+| `/api/users/<id>` | GET, PUT | Thông tin hoặc cập nhật người dùng |
+| `/api/orders` | GET, POST | Danh sách hoặc tạo đơn hàng |
+| `/api/orders/<id>` | GET | Chi tiết đơn hàng |
