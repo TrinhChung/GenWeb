@@ -13,6 +13,7 @@ import WithSelectInputWrapper from "../utils/withSelectInputWrapper";
 import WithNumberInputWrapper from "../utils/withNumberInputWrapper";
 import { formatCategoryName } from "../utils/formatCategoryName";
 import toast from "react-hot-toast";
+import customFetch from "../axios/custom";
 
 const SingleProduct = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -30,21 +31,19 @@ const SingleProduct = () => {
 
   useEffect(() => {
     const fetchSingleProduct = async () => {
-      const response = await fetch(
-        `http://localhost:3000/products/${params.id}`
-      );
-      const data = await response.json();
-      setSingleProduct(data);
+      const response = await customFetch.get(`/products/${params.id}`);
+      setSingleProduct(response.data);
     };
 
     const fetchProducts = async () => {
-      const response = await fetch("http://localhost:3000/products");
-      const data = await response.json();
-      setProducts(data);
+      const response = await customFetch.get("/products");
+      setProducts(response.data);
     };
+
     fetchSingleProduct();
     fetchProducts();
   }, [params.id]);
+
 
   const handleAddToCart = () => {
     if (singleProduct) {
