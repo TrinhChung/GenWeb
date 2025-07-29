@@ -64,6 +64,15 @@ Tất cả các route có tiền tố `/company` và yêu cầu đăng nhập.
 | `/company/edit/<company_id>` | GET, POST | Sửa thông tin công ty |
 | `/company/delete/<company_id>` | POST | Xóa công ty |
 
+## Quản lý Website (`website_bp`)
+Các route có tiền tố `/website` và yêu cầu đăng nhập.
+
+| Đường dẫn | Phương thức | Mô tả |
+| --- | --- | --- |
+| `/website/` | GET | Liệt kê website của người dùng |
+| `/website/add` | GET, POST | Tạo website mới |
+| `/website/delete/<website_id>` | POST | Xóa website |
+
 ## API Frontend (`api_fe_bp`)
 Các route có tiền tố `/api` và không yêu cầu đăng nhập.
 
