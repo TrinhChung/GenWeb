@@ -88,6 +88,7 @@ def create_app():
     from routes.dns import dns_bp
     from routes.cloudflare_account import cloudflare_bp
     from routes.company import company_bp
+    from routes.website import website_bp
     from routes.api import api_bp
 
     app.register_blueprint(home_bp)
@@ -97,6 +98,7 @@ def create_app():
     app.register_blueprint(dns_bp)
     app.register_blueprint(cloudflare_bp)
     app.register_blueprint(company_bp)
+    app.register_blueprint(website_bp)
     app.register_blueprint(api_bp)
 
     # Kiểm soát truy cập: dùng Flask-Login, không cần kiểm tra "facebook_user_id" nữa
