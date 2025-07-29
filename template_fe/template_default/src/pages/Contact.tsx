@@ -37,7 +37,7 @@ const Contact = () => {
   }
 
   return (
-    <div className="max-w-2xl mx-auto px-5 mt-24 flex flex-col gap-8 bg-white shadow-lg rounded-2xl py-10">
+    <div className="max-w-2xl mx-auto px-5 mt-24 flex flex-col gap-8 py-10">
       {/* Logo & Tên công ty */}
       <div className="flex flex-col items-center gap-3">
         {company.logo_url && (
@@ -82,7 +82,7 @@ const Contact = () => {
 
       {/* Google Map */}
       {company.google_map_embed && (
-        <div className="rounded overflow-hidden shadow">
+        <div className="rounded overflow-hidden">
           <div
             className="w-full h-64"
             dangerouslySetInnerHTML={{ __html: company.google_map_embed }}
