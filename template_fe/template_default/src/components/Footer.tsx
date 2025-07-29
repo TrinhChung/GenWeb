@@ -1,13 +1,14 @@
-import SocialMediaFooter from "./SocialMediaFooter";
-import { HiChevronDown } from "react-icons/hi2";
+import { FaHome, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import customFetch from "../axios/custom";
 
 interface CompanyInfo {
+  name: string;
   address: string;
   hotline: string;
   email: string;
-  footer_text: string;
+  license_no?: string;
+  google_map_embed?: string;
 }
 
 const Footer = () => {
@@ -26,50 +27,66 @@ const Footer = () => {
   }, []);
 
   return (
-    <>
-      <SocialMediaFooter />
-      <footer className="max-w-screen-2xl mx-auto border-b-8 border-secondaryBrown px-5 max-[400px]:px-3">
-        <div className="flex justify-center gap-24 text-center mt-12 max-[800px]:flex-col max-[800px]:gap-10">
-          <div className="flex flex-col gap-1">
-            <h3 className="text-2xl font-bold max-sm:text-xl">Client Service</h3>
-            <p className="text-lg max-sm:text-base">After-sale Service</p>
-            <p className="text-lg max-sm:text-base">Free Insurance</p>
+    <footer className="w-full bg-[#222] text-gray-300 py-10 px-4">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+        {/* Cột 1: Thông tin công ty */}
+        <div>
+          <div className="text-lg font-bold mb-2">{company?.name}</div>
+          <div className="flex items-start mb-1 gap-2">
+            <FaHome className="mt-1" />
+            <span className="whitespace-pre-line">{company?.address}</span>
           </div>
-
-          <div className="flex flex-col gap-1">
-            <h3 className="text-2xl font-bold max-sm:text-xl">Our Brand</h3>
-            <p className="text-lg max-sm:text-base">The Company</p>
-            <p className="text-lg max-sm:text-base">The Excellence</p>
-            <p className="text-lg max-sm:text-base">International Awards</p>
-            <p className="text-lg max-sm:text-base">Our Story</p>
+          <div className="flex items-center mb-1 gap-2">
+            <FaPhoneAlt />
+            <span>Hotline: {company?.hotline}</span>
           </div>
-
-          <div className="flex flex-col gap-1">
-            <h3 className="text-2xl font-bold max-sm:text-xl">Luxury Clothing</h3>
-            <p className="text-lg max-sm:text-base">Special Edition</p>
-            <p className="text-lg max-sm:text-base">Summer Edition</p>
-            <p className="text-lg max-sm:text-base">Unique Collection</p>
+          <div className="flex items-center mb-1 gap-2">
+            <FaEnvelope />
+            <span>Email: {company?.email}</span>
           </div>
-        </div>
-        <div className="flex flex-col gap-8 my-20">
-          <p className="flex justify-center items-center text-2xl gap-2 max-sm:text-xl">Worldwide / English <HiChevronDown /></p>
-          <h2 className="text-6xl font-light text-center max-sm:text-5xl">FASHION</h2>
-          <p className="text-base text-center max-sm:text-sm">{company?.footer_text || 'All rights reserved ©2024'}</p>
-          {company && (
-            <div className="text-center text-base flex flex-col gap-1 max-sm:text-sm">
-              <p>{company.address}</p>
-              <p>{company.email}</p>
-              <p>{company.hotline}</p>
-            </div>
+          {company?.license_no && (
+            <div className="mt-1">License No.: {company.license_no}</div>
           )}
-          <ul className="flex justify-center items-center gap-7 text-base max-sm:text-sm max-[350px]:flex-col max-[350px]:gap-5">
-            <li>Cookie Policy</li>
-            <li>Privacy Policy</li>
-            <li>Legal Notes</li>
+        </div>
+        {/* Cột 2: Link */}
+        <div>
+          <div className="font-bold mb-2">LINK</div>
+          <ul className="space-y-1">
+            <li><a href="/" className="hover:text-white flex items-center gap-1"><FaHome />Home page</a></li>
+            <li><a href="/product" className="hover:text-white">Product</a></li>
+            <li><a href="/news" className="hover:text-white">News</a></li>
+            <li><a href="/checkout" className="hover:text-white">Checkout Page</a></li>
+            <li><a href="/cart" className="hover:text-white">Cart page</a></li>
+            <li><a href="/contact" className="hover:text-white">Contact</a></li>
           </ul>
         </div>
-      </footer>
-    </>
+        {/* Cột 3: Product List */}
+        <div>
+          <div className="font-bold mb-2">PRODUCT LIST</div>
+          <ul className="space-y-1">
+            <li><a href="#" className="hover:text-white">Women's sweater</a></li>
+            <li><a href="#" className="hover:text-white">Women's shirt</a></li>
+            <li><a href="#" className="hover:text-white">Skirt</a></li>
+            <li><a href="#" className="hover:text-white">Category 1</a></li>
+            <li><a href="#" className="hover:text-white">Category 2</a></li>
+          </ul>
+        </div>
+        {/* Cột 4: Google map */}
+        <div>
+          <div className="font-bold mb-2">GOOGLE MAP</div>
+          <div className="w-full max-w-xs mx-auto rounded overflow-hidden">
+            {company?.google_map_embed && (
+              <div
+                className="w-full"
+                style={{ minHeight: "120px" }}
+                dangerouslySetInnerHTML={{ __html: company.google_map_embed }}
+              />
+            )}
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 };
+
 export default Footer;
