@@ -6,7 +6,7 @@ const CategoriesSection = () => {
       <h2 className="text-black text-5xl font-normal tracking-[1.56px] max-sm:text-4xl mb-12">
         Our Categories
       </h2>
-      <div className="flex justify-between flex-wrap gap-y-10">
+      <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         <CategoryItem
           categoryTitle="Special Edition"
           image="luxury category 1.png"
