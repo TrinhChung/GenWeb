@@ -11,7 +11,7 @@ const Button = ({ mode, text, ...props }: ButtonProps) => {
       {mode === "white" && (
         <button
           {...props}
-          className="bg-white text-black text-center text-xl border border-gray-400 font-normal tracking-[0.6px] leading-[72px] w-full h-12 flex items-center justify-center max-md:text-base"
+          className="bg-white text-secondaryBrown border border-secondaryBrown text-center text-xl font-normal tracking-[0.6px] leading-[72px] w-full h-12 flex items-center justify-center rounded transition-all duration-300 hover:bg-secondaryBrown hover:text-white hover:shadow-lg active:scale-95 max-md:text-base"
         >
           {text}
         </button>
@@ -20,7 +20,7 @@ const Button = ({ mode, text, ...props }: ButtonProps) => {
       {mode === "brown" && (
         <button
           {...props}
-          className="text-white bg-secondaryBrown text-center text-xl font-normal tracking-[0.6px] leading-[72px] w-full h-12 flex items-center justify-center max-md:text-base"
+          className="text-white bg-secondaryBrown text-center text-xl font-normal tracking-[0.6px] leading-[72px] w-full h-12 flex items-center justify-center rounded transition-all duration-300 hover:bg-secondaryBrown/80 hover:shadow-lg active:scale-95 max-md:text-base"
         >
           {text}
         </button>
@@ -29,7 +29,7 @@ const Button = ({ mode, text, ...props }: ButtonProps) => {
       {mode === "transparent" && (
         <button
           {...props}
-          className="text-white border-white border-2 text-center text-xl font-normal tracking-[0.6px] leading-[72px] w-full h-12 flex items-center justify-center max-md:text-base"
+          className="text-secondaryBrown border-secondaryBrown border-2 text-center text-xl font-normal tracking-[0.6px] leading-[72px] w-full h-12 flex items-center justify-center rounded transition-all duration-300 hover:bg-secondaryBrown hover:text-white hover:shadow-lg active:scale-95 max-md:text-base"
         >
           {text}
         </button>

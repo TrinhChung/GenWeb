@@ -203,7 +203,7 @@ const Cart = () => {
               <div className="mt-6">
                 <Link
                   to="/checkout"
-                  className="text-white bg-secondaryBrown text-center text-xl font-normal tracking-[0.6px] leading-[72px] w-full h-12 flex items-center justify-center max-md:text-base"
+                  className="text-white bg-secondaryBrown text-center text-xl font-normal tracking-[0.6px] leading-[72px] w-full h-12 flex items-center justify-center rounded transition-all duration-300 hover:bg-secondaryBrown/80 hover:shadow-lg active:scale-95 max-md:text-base"
                 >
                   Checkout
                 </Link>
