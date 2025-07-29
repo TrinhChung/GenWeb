@@ -25,7 +25,7 @@ UNITED STATES""",
             "google_map_embed": """
 <iframe src="https://www.google.com/maps?q=JFK+Cargo+Building+75&output=embed" width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 """,
-            "logo_url": "",
+            "logo_url": "/static/images/logo/fashion.svg",
             "footer_text": "",
             "description": "FreightCan LLC - chuyên vận chuyển hàng hóa quốc tế qua sân bay JFK.",
         },

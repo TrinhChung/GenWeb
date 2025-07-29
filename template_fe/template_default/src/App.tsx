@@ -19,6 +19,8 @@ import { checkoutAction, searchAction } from "./actions/index";
 import { shopCategoryLoader } from "./pages/Shop";
 import { loader as orderHistoryLoader } from "./pages/OrderHistory";
 import { loader as singleOrderLoader } from "./pages/SingleOrderHistory";
+import { useEffect, useState } from "react";
+import customFetch from "./axios/custom";
 
 const router = createBrowserRouter([
   {
@@ -91,6 +93,29 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const [logoUrl, setLogoUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchLogo = async () => {
+      try {
+        const res = await customFetch.get("/company");
+        const data = res.data;
+        setLogoUrl(data.logo_url);
+        // Đổi favicon
+        const favicon = document.querySelector("link[rel~='icon']") as HTMLLinkElement | null;
+        if (favicon && data.logo_url) {
+          favicon.href = data.logo_url.startsWith("http")
+            ? data.logo_url
+            : import.meta.env.VITE_API_URL + data.logo_url;
+        }
+      } catch (e) {
+        console.error("Could not fetch company logo", e);
+      }
+    };
+    fetchLogo();
+  }, []);
+
+  
   return <RouterProvider router={router} />;
 }
 
