@@ -19,12 +19,12 @@ const ProductItem = ({
   stock: number;        // <--- thêm
 }) => {
   return (
-    <div className="w-full max-w-[400px] flex flex-col gap-2 justify-center mx-auto">
+    <div className="w-full md:max-w-[400px] flex flex-col gap-2 justify-center mx-auto">
       <Link
         to={`/product/${id}`}
         className="w-full h-[300px] max-md:h-[200px] overflow-hidden"
       >
-        <img src={`/src/assets/${image}`} alt={title} />
+        <img src={`/src/assets/${image}`} alt={title} className="w-full h-full object-cover" />
       </Link>
       <Link
         to={`/product/${id}`}
