@@ -9,4 +9,10 @@ const customFetch = axios.create({
   },
 });
 
+customFetch.interceptors.request.use((config) => {
+  const domain = window.location.hostname;
+  config.headers["X-Client-Domain"] = domain;  // Gắn vào header
+  return config;
+}, (error) => Promise.reject(error));
+
 export default customFetch;
