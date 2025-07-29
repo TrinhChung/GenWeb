@@ -27,21 +27,21 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="w-full bg-[#222] text-gray-300 py-10 px-4">
+    <footer className="w-full bg-secondaryBrown text-white py-10 px-4">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Cột 1: Thông tin công ty */}
         <div>
           <div className="text-lg font-bold mb-2">{company?.name}</div>
           <div className="flex items-start mb-1 gap-2">
-            <FaHome className="mt-1" />
+            <FaHome className="mt-1 text-white" />
             <span className="whitespace-pre-line">{company?.address}</span>
           </div>
           <div className="flex items-center mb-1 gap-2">
-            <FaPhoneAlt />
+            <FaPhoneAlt className="text-white" />
             <span>Hotline: {company?.hotline}</span>
           </div>
           <div className="flex items-center mb-1 gap-2">
-            <FaEnvelope />
+            <FaEnvelope className="text-white" />
             <span>Email: {company?.email}</span>
           </div>
           {company?.license_no && (

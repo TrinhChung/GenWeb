@@ -56,20 +56,20 @@ const Contact = () => {
       {/* Thông tin liên hệ */}
       <div className="flex flex-col gap-3 text-base text-gray-700">
         <div className="flex items-start gap-3">
-          <FaMapMarkerAlt className="mt-1 text-primary" />
+          <FaMapMarkerAlt className="mt-1 text-secondaryBrown" />
           <span className="whitespace-pre-line">{company.address}</span>
         </div>
         <div className="flex items-center gap-3">
-          <FaEnvelope className="text-primary" />
+          <FaEnvelope className="text-secondaryBrown" />
           <span>{company.email}</span>
         </div>
         <div className="flex items-center gap-3">
-          <FaPhoneAlt className="text-primary" />
+          <FaPhoneAlt className="text-secondaryBrown" />
           <span>{company.hotline}</span>
         </div>
         {company.license_no && (
           <div className="flex items-center gap-3">
-            <FaIdCard className="text-primary" />
+            <FaIdCard className="text-secondaryBrown" />
             <span>License No: {company.license_no}</span>
           </div>
         )}
