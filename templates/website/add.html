@@ -4,6 +4,8 @@
 {% block content %}
 <h2>Thêm Website</h2>
 <form method="post">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
     <div class="mb-3">
         <label class="form-label">Chọn Công ty</label>
         <select name="company_id" class="form-select" required>
@@ -13,15 +15,22 @@
             {% endfor %}
         </select>
     </div>
+
     <div class="mb-3">
-        <label class="form-label">Chọn DNS Record</label>
-        <select name="dns_record_id" class="form-select" required>
+        <label class="form-label">Chọn Domain</label>
+        <select name="domain_id" class="form-select" required>
             <option value="">-- Chọn --</option>
-            {% for d in dns_records %}
-            <option value="{{ d.id }}">{{ d.name }} ({{ d.record_type }})</option>
+            {% for d in domains %}
+            <option value="{{ d.id }}">{{ d.name }}</option>
             {% endfor %}
         </select>
     </div>
+
+    <div class="mb-3">
+        <label class="form-label">Nhập Subdomain</label>
+        <input type="text" name="subdomain" class="form-control" placeholder="Ví dụ: shop" required>
+    </div>
+
     <div class="mb-3">
         <label class="form-label">Template</label>
         <select name="template_id" class="form-select">
@@ -31,6 +40,7 @@
             {% endfor %}
         </select>
     </div>
+
     <div class="mb-3">
         <label class="form-label">Static Page Link</label>
         <input type="text" name="static_page_link" class="form-control">
