@@ -5,6 +5,7 @@ from models.product import Product
 from models.user_fe import UserFE
 from models.order import Order
 from models.order_item import OrderItem
+from models.company import Company
 
 api_bp = Blueprint('api_fe', __name__, url_prefix='/api')
 
@@ -176,3 +177,27 @@ def order_detail(order_id):
     """Lấy chi tiết một đơn hàng."""
     order = Order.query.get_or_404(order_id)
     return jsonify(_order_to_dict(order))
+
+
+@api_bp.route("/company", methods=["GET"])
+def get_first_company():
+    """Trả về thông tin công ty đầu tiên (dump cho frontend)."""
+    company = Company.query.first()
+    if not company:
+        return jsonify({"error": "No company found"}), 404
+    return jsonify(
+        {
+            "id": company.id,
+            "name": company.name,
+            "address": company.address,
+            "hotline": company.hotline,
+            "email": company.email,
+            "license_no": company.license_no,
+            "google_map_embed": company.google_map_embed,
+            "logo_url": company.logo_url,
+            "footer_text": company.footer_text,
+            "description": company.description,
+            "note": company.note,
+            "user_id": company.user_id,
+        }
+    )

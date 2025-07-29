@@ -16,7 +16,7 @@ source myenv/bin/activate
 
 **Windows (CMD):**
 
-```cmd
+```bash
 myenv\Scripts\activate
 ```
 
