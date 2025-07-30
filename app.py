@@ -139,4 +139,4 @@ if __name__ == "__main__":
         seed_product(app)
         seed_user_fe(app)
         seed_orders(app)
-    app.run(host="0.0.0.0", port=4000, debug=True)
+    app.run(host="0.0.0.0", port=7654, debug=True)
