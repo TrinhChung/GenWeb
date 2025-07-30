@@ -23,7 +23,6 @@ async function getCompanyInfo() {
 // Metadata động: gọi API lấy tên, description, logo
 export async function generateMetadata(): Promise<Metadata> {
   const company = await getCompanyInfo();
-  console.log('Company in generateMetadata:', company);
   return {
     title: company?.name || "TEEZ.LO",
     description: company?.description || "Fashion Store powered by Next.js",

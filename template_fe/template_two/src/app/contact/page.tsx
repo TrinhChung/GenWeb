@@ -25,14 +25,6 @@ export default async function ContactPage() {
     <div className="max-w-2xl mx-auto px-5 mt-24 flex flex-col gap-8 py-10">
       {/* Logo & Company name */}
       <div className="flex flex-col items-center gap-3">
-        {company.logo_url && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={company.logo_url}
-            alt={company.name}
-            className="max-h-20 object-contain mb-1"
-          />
-        )}
         <h1 className="text-4xl font-bold text-gray-800 text-center">
           {company.name}
         </h1>
