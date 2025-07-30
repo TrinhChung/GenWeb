@@ -23,13 +23,13 @@ async function getCompanyInfo() {
 // Metadata động: gọi API lấy tên, description, logo
 export async function generateMetadata(): Promise<Metadata> {
   const company = await getCompanyInfo();
+  console.log('Company in generateMetadata:', company);
   return {
     title: company?.name || "TEEZ.LO",
     description: company?.description || "Fashion Store powered by Next.js",
     icons: company?.logo_url
-      ? [{ rel: "icon", url: company.logo_url }]
+      ? [{ rel: "icon", url: process.env.NEXT_PUBLIC_API_URL + company.logo_url }]
       : undefined,
-    // Bạn có thể thêm các trường khác tùy ý, ví dụ: openGraph, twitterCard...
   };
 }
 
