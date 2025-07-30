@@ -79,7 +79,7 @@ const TopNavbar = ({ company }: { company: Company | null }) => {
       <div className="flex relative max-w-frame mx-auto items-center justify-between md:justify-start py-5 md:py-6 px-4 xl:px-0">
         <div className="flex items-center">
           <div className="block md:hidden mr-4">
-            <ResTopNavbar data={data} company={company}/>
+            <ResTopNavbar data={data}/>
           </div>
           <Link
             href="/"

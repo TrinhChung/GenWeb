@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig } from "axios";
+import axios from "axios";
 
 // Lấy base URL từ env (Next.js dùng NEXT_PUBLIC_API_URL cho client-side)
 const baseURL =
@@ -14,8 +14,10 @@ const customFetch = axios.create({
 });
 
 // Interceptor chỉ gắn X-Client-Domain ở phía client (browser)
+import type { InternalAxiosRequestConfig } from "axios";
+
 customFetch.interceptors.request.use(
-  (config: AxiosRequestConfig) => {
+  (config: InternalAxiosRequestConfig) => {
     if (typeof window !== "undefined") {
       // Only in browser
       const domain = window.location.hostname;

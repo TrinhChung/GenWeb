@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/accordion";
 import { Company } from "@/types/company.types";
 
-const ResTopNavbar = ({ data }: { data: NavMenu }, { company }: { company: Company | null }) => {
+const ResTopNavbar = ({ data }: { data: NavMenu }) => {
   return (
     <Sheet>
       <SheetTrigger asChild className="cursor-pointer">
