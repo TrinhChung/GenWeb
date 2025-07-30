@@ -1,3 +1,4 @@
+"use client"
 import { cn } from "@/lib/utils";
 import { integralCF } from "@/styles/fonts";
 import Link from "next/link";
@@ -70,13 +71,15 @@ const data: NavMenu = [
   },
 ];
 
-const TopNavbar = ({ company }: { company: Company}) => {
+const TopNavbar = ({ company }: { company: Company | null }) => {
+  console.log('Company in TopNavbar:', company)
+
   return (
     <nav className="sticky top-0 bg-white z-20">
       <div className="flex relative max-w-frame mx-auto items-center justify-between md:justify-start py-5 md:py-6 px-4 xl:px-0">
         <div className="flex items-center">
           <div className="block md:hidden mr-4">
-            <ResTopNavbar data={data} />
+            <ResTopNavbar data={data} company={company}/>
           </div>
           <Link
             href="/"
@@ -86,7 +89,7 @@ const TopNavbar = ({ company }: { company: Company}) => {
             ])}
             aria-label={company?.name || "Home"}
           >
-            {company?.name || "TEEZ.LO"}
+            {"FASHION"}
           </Link>
         </div>
         <NavigationMenu className="hidden md:flex mr-2 lg:mr-7">

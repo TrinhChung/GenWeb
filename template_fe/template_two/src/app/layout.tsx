@@ -15,6 +15,7 @@ async function getCompanyInfo() {
     const res = await customFetch.get<Company>("/company");
     return res.data;
   } catch (e) {
+    console.error("Could not fetch company info", e);
     return null;
   }
 }

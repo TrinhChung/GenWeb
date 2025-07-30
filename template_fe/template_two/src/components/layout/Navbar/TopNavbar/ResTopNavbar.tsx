@@ -18,8 +18,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Company } from "@/types/company.types";
 
-const ResTopNavbar = ({ data }: { data: NavMenu }) => {
+const ResTopNavbar = ({ data }: { data: NavMenu }, { company }: { company: Company | null }) => {
   return (
     <Sheet>
       <SheetTrigger asChild className="cursor-pointer">
@@ -37,7 +38,7 @@ const ResTopNavbar = ({ data }: { data: NavMenu }) => {
           <SheetTitle asChild>
             <SheetClose asChild>
               <Link href="/" className={cn([integralCF.className, "text-2xl"])}>
-                TEEZ.LO
+                FASHION
               </Link>
             </SheetClose>
           </SheetTitle>

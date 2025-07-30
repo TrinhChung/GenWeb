@@ -56,58 +56,6 @@ const footerLinksData: FooterLinks[] = [
       },
     ],
   },
-  {
-    id: 3,
-    title: "faq",
-    children: [
-      {
-        id: 31,
-        label: "account",
-        url: "#",
-      },
-      {
-        id: 32,
-        label: "manage deliveries",
-        url: "#",
-      },
-      {
-        id: 33,
-        label: "orders",
-        url: "#",
-      },
-      {
-        id: 34,
-        label: "payments",
-        url: "#",
-      },
-    ],
-  },
-  {
-    id: 4,
-    title: "resources",
-    children: [
-      {
-        id: 41,
-        label: "Free eBooks",
-        url: "#",
-      },
-      {
-        id: 42,
-        label: "development tutorial",
-        url: "#",
-      },
-      {
-        id: 43,
-        label: "How to - Blog",
-        url: "#",
-      },
-      {
-        id: 44,
-        label: "youtube playlist",
-        url: "#",
-      },
-    ],
-  },
 ];
 
 const LinksSection = () => {
